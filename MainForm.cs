@@ -125,6 +125,7 @@ namespace spellchk
             }
 
             replaceHtmlChar(rtb_output);
+            rtb_output.SelectionStart = 0;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
