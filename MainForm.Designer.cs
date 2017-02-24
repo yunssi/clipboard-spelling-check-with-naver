@@ -52,12 +52,12 @@
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel3});
             this.statusStrip.Location = new System.Drawing.Point(0, 153);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.statusStrip.Size = new System.Drawing.Size(382, 22);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 1;
