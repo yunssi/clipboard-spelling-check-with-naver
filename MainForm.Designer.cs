@@ -101,7 +101,7 @@
             // tsmiAlwaysTop
             // 
             this.tsmiAlwaysTop.Name = "tsmiAlwaysTop";
-            this.tsmiAlwaysTop.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAlwaysTop.Size = new System.Drawing.Size(134, 22);
             this.tsmiAlwaysTop.Text = "항상 위에~";
             this.tsmiAlwaysTop.Click += new System.EventHandler(this.tsmiAlwaysTop_Click);
             // 
@@ -117,6 +117,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "클립보드에 있는 내용 맞춤법 검사하기~";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
+            this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();

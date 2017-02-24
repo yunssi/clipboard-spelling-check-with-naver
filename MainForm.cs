@@ -11,6 +11,7 @@ namespace spellchk
 {
     public partial class MainForm : Form
     {
+        bool isActivated = true;
         ClipboardMonitor clipboardMonitor = null;
         Regex htmlPattern = new Regex("\\\"html\\\":\\\"(.*?)\\\"", RegexOptions.Compiled);
         Regex resultPattern = new Regex("\\\"(.*?)\\\"", RegexOptions.Compiled);
@@ -30,7 +31,7 @@ namespace spellchk
 
         private void OnClipboardChanged(object sender, ClipboardChangedEventArgs e)
         {
-            if (e.DataObject.GetDataPresent(DataFormats.UnicodeText))
+            if (e.DataObject.GetDataPresent(DataFormats.UnicodeText) && !this.isActivated)
             {
                 var inputText = e.DataObject.GetData(DataFormats.UnicodeText) as string;
 
@@ -169,6 +170,16 @@ namespace spellchk
             ToolStripMenuItem tsmi = sender as ToolStripMenuItem;
             tsmi.Checked = !tsmi.Checked;
             this.TopMost = tsmi.Checked;
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            this.isActivated = true;
+        }
+
+        private void MainForm_Deactivate(object sender, EventArgs e)
+        {
+            this.isActivated = false;
         }
     }
 }
