@@ -36,6 +36,7 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsddbSettings = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiAlwaysTop = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAutoStoreInClipbd = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +92,7 @@
             // 
             this.tsddbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsddbSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAutoStoreInClipbd,
             this.tsmiAlwaysTop});
             this.tsddbSettings.Image = global::spellchk.Properties.Resources.settings_icon;
             this.tsddbSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -101,9 +103,16 @@
             // tsmiAlwaysTop
             // 
             this.tsmiAlwaysTop.Name = "tsmiAlwaysTop";
-            this.tsmiAlwaysTop.Size = new System.Drawing.Size(134, 22);
+            this.tsmiAlwaysTop.Size = new System.Drawing.Size(182, 22);
             this.tsmiAlwaysTop.Text = "항상 위에~";
             this.tsmiAlwaysTop.Click += new System.EventHandler(this.tsmiAlwaysTop_Click);
+            // 
+            // tsmiAutoStoreInClipbd
+            // 
+            this.tsmiAutoStoreInClipbd.Name = "tsmiAutoStoreInClipbd";
+            this.tsmiAutoStoreInClipbd.Size = new System.Drawing.Size(182, 22);
+            this.tsmiAutoStoreInClipbd.Text = "수정 내용 자동 복사";
+            this.tsmiAutoStoreInClipbd.Click += new System.EventHandler(this.tsmiAutoStoreInClipbd_Click);
             // 
             // MainForm
             // 
@@ -136,6 +145,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripDropDownButton tsddbSettings;
         private System.Windows.Forms.ToolStripMenuItem tsmiAlwaysTop;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAutoStoreInClipbd;
     }
 }
 
