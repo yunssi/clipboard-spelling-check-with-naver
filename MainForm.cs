@@ -48,49 +48,49 @@ namespace spellchk
             string text = string.Empty;
             while (true)
             {
-                text = rtb_output.Text;
+                text = rtbResultOutput.Text;
                 Match match = specialChPattern.Match(text);
                 if (!match.Success)
                 {
                     break;
                 }
-                rtb_output.Select(match.Index, match.Length);
+                rtbResultOutput.Select(match.Index, match.Length);
                 if (match.Value.Equals("&quot;") || match.Value.Equals("&#34;"))
                 {
-                    rtb_output.SelectedText = "\"";
+                    rtbResultOutput.SelectedText = "\"";
                 }
                 else if (match.Value.Equals("&amp;") || match.Value.Equals("&#38;"))
                 {
-                    rtb_output.SelectedText = "&";
+                    rtbResultOutput.SelectedText = "&";
                 }
                 else if (match.Value.Equals("&apos;") || match.Value.Equals("&#39;"))
                 {
-                    rtb_output.SelectedText = "'";
+                    rtbResultOutput.SelectedText = "'";
                 }
                 else if (match.Value.Equals("&lt;") || match.Value.Equals("&#60;"))
                 {
-                    rtb_output.SelectedText = "<";
+                    rtbResultOutput.SelectedText = "<";
                 }
                 else if (match.Value.Equals("&gt;") || match.Value.Equals("&#62;"))
                 {
-                    rtb_output.SelectedText = ">";
+                    rtbResultOutput.SelectedText = ">";
                 }
             }
         }
 
         private void setFormatting(string str)
         {
-            rtb_output.Clear();
+            rtbResultOutput.Clear();
             str = brTagPattern.Replace(str, "\n");
-            rtb_output.Text = str;
+            rtbResultOutput.Text = str;
 
             MatchCollection purpleMatches = purplePattern.Matches(str);
             if (purpleMatches.Count > 0)
             {
                 foreach (Match match in purpleMatches)
                 {
-                    rtb_output.Select(match.Index, match.Length);
-                    rtb_output.SelectionColor = Color.Purple;
+                    rtbResultOutput.Select(match.Index, match.Length);
+                    rtbResultOutput.SelectionColor = Color.Purple;
                 }
             }
             MatchCollection greenMatches = greenPattern.Matches(str);
@@ -98,8 +98,8 @@ namespace spellchk
             {
                 foreach (Match match in greenMatches)
                 {
-                    rtb_output.Select(match.Index, match.Length);
-                    rtb_output.SelectionColor = Color.Green;
+                    rtbResultOutput.Select(match.Index, match.Length);
+                    rtbResultOutput.SelectionColor = Color.Green;
                 }
             }
             MatchCollection redMatches = redPattern.Matches(str);
@@ -107,25 +107,25 @@ namespace spellchk
             {
                 foreach (Match match in redMatches)
                 {
-                    rtb_output.Select(match.Index, match.Length);
-                    rtb_output.SelectionColor = Color.Red;
+                    rtbResultOutput.Select(match.Index, match.Length);
+                    rtbResultOutput.SelectionColor = Color.Red;
                 }
             }
 
             while(true)
             {
-                string text = rtb_output.Text;
+                string text = rtbResultOutput.Text;
                 Match tagMatch = tagPattern.Match(text);
                 if(!tagMatch.Success)
                 {
                     break;
                 }
-                rtb_output.Select(tagMatch.Index, tagMatch.Length);
-                rtb_output.SelectedText = "";
+                rtbResultOutput.Select(tagMatch.Index, tagMatch.Length);
+                rtbResultOutput.SelectedText = "";
             }
 
-            replaceHtmlChar(rtb_output);
-            rtb_output.SelectionStart = 0;
+            replaceHtmlChar(rtbResultOutput);
+            rtbResultOutput.SelectionStart = 0;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -162,6 +162,13 @@ namespace spellchk
                 Console.WriteLine(ex.Message);
             }
             return result;
+        }
+
+        private void tsmiAlwaysTop_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem tsmi = sender as ToolStripMenuItem;
+            tsmi.Checked = !tsmi.Checked;
+            this.TopMost = tsmi.Checked;
         }
     }
 }
