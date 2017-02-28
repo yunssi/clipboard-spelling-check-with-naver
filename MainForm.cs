@@ -43,7 +43,6 @@ namespace spellchk
                 }
 
                 setFormatting(checkSpelling(inputText));
-                Console.WriteLine("체크~");
             }
         }
 
