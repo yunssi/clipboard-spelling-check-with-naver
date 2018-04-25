@@ -148,7 +148,7 @@ namespace spellchk
             string result = string.Empty;
             try
             {
-                string url = "https://m.search.naver.com/p/csearch/dcontent/spellchecker.nhn?_callback=callback&q=" + HttpUtility.UrlEncode(text);
+                string url = "https://m.search.naver.com/p/csearch/ocontent/spellchecker.nhn?_callback=window.__jindo2_callback._spellingCheck_0&q=" + HttpUtility.UrlEncode(text);
 
                 ProcessStartInfo start = new ProcessStartInfo();
                 start.FileName = @".\curl\curl.exe";
