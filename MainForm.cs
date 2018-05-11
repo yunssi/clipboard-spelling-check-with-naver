@@ -148,7 +148,9 @@ namespace spellchk
             string result = string.Empty;
             try
             {
-                string url = "https://m.search.naver.com/p/csearch/ocontent/spellchecker.nhn?_callback=window.__jindo2_callback._spellingCheck_0&q=" + HttpUtility.UrlEncode(text);
+                string url = "\"https://m.search.naver.com/p/csearch/ocontent/spellchecker.nhn?_callback=window.__jindo2_callback._spellingCheck_0&q=" + Uri.EscapeUriString(text) + "\"";
+                // 또는 string url = "https://m.search.naver.com/p/csearch/ocontent/spellchecker.nhn?_callback=window.__jindo2_callback._spellingCheck_0&q=" + HttpUtility.UrlPathEncode(text);
+                url += " -H \"accept-encoding: gzip, deflate, br\" -H \"accept-language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7\" -H \"user-agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36\" -H \"accept: */*\" -H \"referer: https://search.naver.com/search.naver?where=nexearch&sm=top_sug.pre&fbm=1&acr=1&acq=%EB%A7%9E%EC%B6%A4%EB%B2%95&qdt=0&ie=utf8&query=%EB%A7%9E%EC%B6%A4%EB%B2%95%EA%B2%80%EC%82%AC%EA%B8%B0\" -H \"authority: m.search.naver.com\" -H \"cookie: _ga=GA1.2.1941705593.1522560283; npic=UkDXziGMGbMdoI6w/ZhN64gwu1BUxG/YjOyDdkJlzmNdrOIQEdVaIKhY11t5EaRxCA==; nsr_acl=1; ASID=0a43087b00000162dd3409c200000055; nx_ssl=2; NMUPOPEN=Y; nid_iplevel=1; page_uid=TYgJKspySDwssbUhM74ssssssbl-144318\" --compressed";
 
                 ProcessStartInfo start = new ProcessStartInfo();
                 start.FileName = @".\curl\curl.exe";
@@ -196,6 +198,12 @@ namespace spellchk
         private void MainForm_Deactivate(object sender, EventArgs e)
         {
             this.isActivated = false;
+        }
+
+        private void donateToolStripStatusLabel_Click(object sender, EventArgs e)
+        {
+            DonateForm df = new DonateForm();
+            df.ShowDialog();
         }
     }
 }

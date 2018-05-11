@@ -52,6 +52,12 @@
     <Compile Include="ClipboardMonitor.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DonateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DonateForm.Designer.cs">
+      <DependentUpon>DonateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DonateForm.resx">
+      <DependentUpon>DonateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +99,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="settings-icon.png" />
+    <None Include="coffee.png" />
+    <None Include="KakaoPay_QR.png" />
     <Content Include="spellchk.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -35,8 +35,10 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsddbSettings = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tsmiAlwaysTop = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAutoStoreInClipbd = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAlwaysTop = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.donateToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             this.rtbResultOutput.Name = "rtbResultOutput";
             this.rtbResultOutput.Size = new System.Drawing.Size(382, 175);
             this.rtbResultOutput.TabIndex = 0;
-            this.rtbResultOutput.Text = "";
+            this.rtbResultOutput.Text = "※ 무엇을 하는 애인가?\n텍스트를 클립보드에 복사(Ctrl+C)하면 \"네이버 맞춤법 검사기\"를 거쳐 교정된 결과가 표시됩니다~";
             // 
             // statusStrip
             // 
@@ -58,7 +60,9 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
-            this.tsddbSettings});
+            this.tsddbSettings,
+            this.toolStripStatusLabel4,
+            this.donateToolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 153);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -92,27 +96,43 @@
             // 
             this.tsddbSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsddbSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiAutoStoreInClipbd,
-            this.tsmiAlwaysTop});
+            this.tsmiAlwaysTop,
+            this.tsmiAutoStoreInClipbd});
             this.tsddbSettings.Image = global::spellchk.Properties.Resources.settings_icon;
             this.tsddbSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsddbSettings.Name = "tsddbSettings";
             this.tsddbSettings.Size = new System.Drawing.Size(29, 20);
             this.tsddbSettings.Text = "toolStripDropDownButton1";
             // 
-            // tsmiAlwaysTop
-            // 
-            this.tsmiAlwaysTop.Name = "tsmiAlwaysTop";
-            this.tsmiAlwaysTop.Size = new System.Drawing.Size(182, 22);
-            this.tsmiAlwaysTop.Text = "항상 위에~";
-            this.tsmiAlwaysTop.Click += new System.EventHandler(this.tsmiAlwaysTop_Click);
-            // 
             // tsmiAutoStoreInClipbd
             // 
             this.tsmiAutoStoreInClipbd.Name = "tsmiAutoStoreInClipbd";
-            this.tsmiAutoStoreInClipbd.Size = new System.Drawing.Size(182, 22);
-            this.tsmiAutoStoreInClipbd.Text = "수정 내용 자동 복사";
+            this.tsmiAutoStoreInClipbd.Size = new System.Drawing.Size(246, 22);
+            this.tsmiAutoStoreInClipbd.Text = "수정 내용 클립보드에 자동 복사";
             this.tsmiAutoStoreInClipbd.Click += new System.EventHandler(this.tsmiAutoStoreInClipbd_Click);
+            // 
+            // tsmiAlwaysTop
+            // 
+            this.tsmiAlwaysTop.Name = "tsmiAlwaysTop";
+            this.tsmiAlwaysTop.Size = new System.Drawing.Size(246, 22);
+            this.tsmiAlwaysTop.Text = "항상 위에~";
+            this.tsmiAlwaysTop.Click += new System.EventHandler(this.tsmiAlwaysTop_Click);
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(66, 17);
+            this.toolStripStatusLabel4.Spring = true;
+            // 
+            // donateToolStripStatusLabel
+            // 
+            this.donateToolStripStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.donateToolStripStatusLabel.Image = global::spellchk.Properties.Resources.coffee;
+            this.donateToolStripStatusLabel.IsLink = true;
+            this.donateToolStripStatusLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.donateToolStripStatusLabel.Name = "donateToolStripStatusLabel";
+            this.donateToolStripStatusLabel.Size = new System.Drawing.Size(16, 17);
+            this.donateToolStripStatusLabel.Click += new System.EventHandler(this.donateToolStripStatusLabel_Click);
             // 
             // MainForm
             // 
@@ -125,7 +145,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
-            this.Text = "클립보드에 있는 내용 맞춤법 검사하기~";
+            this.Text = "클립보드 맞춤법 검사하기~";
             this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -146,6 +166,8 @@
         private System.Windows.Forms.ToolStripDropDownButton tsddbSettings;
         private System.Windows.Forms.ToolStripMenuItem tsmiAlwaysTop;
         private System.Windows.Forms.ToolStripMenuItem tsmiAutoStoreInClipbd;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripStatusLabel donateToolStripStatusLabel;
     }
 }
 
